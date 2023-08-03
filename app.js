@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
-const router = express.Router();
 const database = require("./database");
 const mongoose = require("mongoose");
 
@@ -26,11 +25,9 @@ db.on("error", (err) => {
 
 //import main route
 const mainRoute = require("./routes/mainRoute");
-const studentRoute = require("./routes/studentRoutes");
 
 //use route
 app.use("/v1", mainRoute);
-app.use("/v1", studentRoute);
 
 //this is the listener of the server
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

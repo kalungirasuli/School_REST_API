@@ -3,7 +3,7 @@ const router = express.Router();
 const Student = require("../models/student"); 
 
 // Create a student
-router.post("/students", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const student = new Student(req.body);
     await student.save();
@@ -14,7 +14,7 @@ router.post("/students", async (req, res) => {
 });
 
 // Get all students
-router.get("/students", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const students = await Student.find();
     res.status(200).send(students);
@@ -24,7 +24,7 @@ router.get("/students", async (req, res) => {
 });
 
 // Get a specific student by ID
-router.get("/students/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
     const studentId = req.params.id;
     const student = await Student.findById(studentId);
@@ -38,7 +38,7 @@ router.get("/students/:id", async (req, res) => {
 });
 
 // Update a specific student by ID
-router.put("/students/:id", async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const studentId = req.params.id;
 
@@ -57,7 +57,7 @@ router.put("/students/:id", async (req, res) => {
 });
 
 // Delete a specific student by ID
-router.delete("/students/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const studentId = req.params.id;
     const deletedStudent = await Student.findByIdAndDelete(studentId);
