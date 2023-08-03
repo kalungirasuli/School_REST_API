@@ -1,0 +1,168 @@
+# Building a RESTAPI for a School Management System:
+
+# Step 1: Identify Resources
+  # staff
+  # students
+  # courses
+  # departments
+  # clubs
+
+# Step 2: Think in CRUD Operations
+  # For each resourse:
+    # How to Create a Resource?
+    # How to Read [All] Resources?
+    # How to Read [A specific] Resource?
+    # How to Update [A specific] Resource?
+    # How to Delete [A specific] Resource?
+
+# Build the Service to serve the Resources:
+  # NESTJS/EXPRESSJS
+  # DJANGO & DRF
+
+# Think in HTTP Methods:
+    # How to POST a Resource?
+    # How to GET [All] Resources?
+    # How to GET [A specific] Resource?
+    # How to PUT [A specific] Resource?
+    # How to DELETE [A specific] Resource?
+
+# Creating Endpoints:
+  # [domain]/endpoint
+  # https://www.schoolapi.com/v1/endpoint
+
+# Staff:
+    # How to POST a Staff Member?
+    [POST]  https://www.schoolapi.com/v1/staff/
+
+    # How to GET [All] Staff Members?
+    [GET]   https://www.schoolapi.com/v1/staff/
+
+    # How to GET [A specific] Staff Member?
+    [GET]   https://www.schoolapi.com/v1/staff/{:id} # JS
+    [GET]   https://www.schoolapi.com/v1/staff/<id:str> # PY
+    [GET]   https://www.schoolapi.com/v1/staff/id-STF-001 # Client
+
+    # How to PUT [A specific] Staff Member?
+    [PUT]   https://www.schoolapi.com/v1/staff/{:id} # JS
+    [PUT]   https://www.schoolapi.com/v1/staff/<id:str> # PY
+    [PUT]   https://www.schoolapi.com/v1/staff/id # Client
+
+    # How to DELETE [A specific] Staff Member?
+    [DELETE]   https://www.schoolapi.com/v1/staff/{:id} # JS
+    [DELETE]   https://www.schoolapi.com/v1/staff/<id:str> # PY
+    [DELETE]   https://www.schoolapi.com/v1/staff/id # Client
+
+
+# students
+    # How to POST a Student?
+    [POST]  https://www.schoolapi.com/v1/students/
+
+    # How to GET [All] Student?
+    [GET]   https://www.schoolapi.com/v1/students/
+
+    # How to GET [A specific] Student?
+    [GET]   https://www.schoolapi.com/v1/students/{:id} # JS
+    [GET]   https://www.schoolapi.com/v1/students/<id:str> # PY
+    [GET]   https://www.schoolapi.com/v1/students/id # Client
+
+    # How to PUT [A specific] Student?
+    [PUT]   https://www.schoolapi.com/v1/students/{:id} # JS
+    [PUT]   https://www.schoolapi.com/v1/students/<id:str> # PY
+    [PUT]   https://www.schoolapi.com/v1/students/id # Client
+
+    # How to DELETE [A specific] Student?
+    [DELETE]   https://www.schoolapi.com/v1/students/{:id} # JS
+    [DELETE]   https://www.schoolapi.com/v1/students/<id:str> # PY
+    [DELETE]   https://www.schoolapi.com/v1/students/id # Client
+
+# courses
+    # How to POST a Course?
+    [POST]  https://www.schoolapi.com/v1/courses/
+
+    # How to GET [All] Course?
+    [GET]   https://www.schoolapi.com/v1/courses/
+
+    # How to GET [A specific] Course?
+    [GET]   https://www.schoolapi.com/v1/courses/{:id} # JS
+    [GET]   https://www.schoolapi.com/v1/courses/<id:str> # PY
+    [GET]   https://www.schoolapi.com/v1/courses/id # Client
+
+    # How to PUT [A specific] Course?
+    [PUT]   https://www.schoolapi.com/v1/courses/{:id} # JS
+    [PUT]   https://www.schoolapi.com/v1/courses/<id:str> # PY
+    [PUT]   https://www.schoolapi.com/v1/courses/id # Client
+
+    # How to DELETE [A specific] Course?
+    [DELETE]   https://www.schoolapi.com/v1/courses/{:id} # JS
+    [DELETE]   https://www.schoolapi.com/v1/courses/<id:str> # PY
+    [DELETE]   https://www.schoolapi.com/v1/courses/id # Client
+
+# departments
+    # How to POST a Department?
+    [POST]  https://www.schoolapi.com/v1/departments/
+
+    # How to GET [All] Department?
+    [GET]   https://www.schoolapi.com/v1/departments/
+
+    # How to GET [A specific] Department?
+    [GET]   https://www.schoolapi.com/v1/departments/{:id} # JS
+    [GET]   https://www.schoolapi.com/v1/departments/<id:str> # PY
+    [GET]   https://www.schoolapi.com/v1/departments/id # Client
+
+    # How to PUT [A specific] Department?
+    [PUT]   https://www.schoolapi.com/v1/departments/{:id} # JS
+    [PUT]   https://www.schoolapi.com/v1/departments/<id:str> # PY
+    [PUT]   https://www.schoolapi.com/v1/departments/id # Client
+
+    # How to DELETE [A specific] Department?
+    [DELETE]   https://www.schoolapi.com/v1/departments/{:id} # JS
+    [DELETE]   https://www.schoolapi.com/v1/departments/<id:str> # PY
+    [DELETE]   https://www.schoolapi.com/v1/departments/id # Client
+
+# clubs
+    # How to POST a Club?
+    [POST]  https://www.schoolapi.com/v1/clubs/
+
+    # How to GET [All] Club?
+    [GET]   https://www.schoolapi.com/v1/clubs/
+
+    # How to GET [A specific] Club?
+    [GET]   https://www.schoolapi.com/v1/clubs/{:id} # JS
+    [GET]   https://www.schoolapi.com/v1/clubs/<id:str> # PY
+    [GET]   https://www.schoolapi.com/v1/clubs/id # Client
+
+    # How to PUT [A specific] Club?
+    [PUT]   https://www.schoolapi.com/v1/clubs/{:id} # JS
+    [PUT]   https://www.schoolapi.com/v1/clubs/<id:str> # PY
+    [PUT]   https://www.schoolapi.com/v1/clubs/id # Client
+
+    # How to DELETE [A specific] Club?
+    [DELETE]   https://www.schoolapi.com/v1/clubs/{:id} # JS
+    [DELETE]   https://www.schoolapi.com/v1/clubs/<id:str> # PY
+    [DELETE]   https://www.schoolapi.com/v1/clubs/id # Client
+
+
+
+
+
+
+
+
+
+
+
+
+[POST]  https://www.schoolapi.com/v1/students/
+
+    # Payload
+      headers:{
+        method: 'POST',
+        accept: 'application/json'  
+      }
+
+      body:{
+        "first_name": "John",
+        "lastName": "Doe",
+        "id": "id",
+        "email": "johndoe@example.com"
+      }
