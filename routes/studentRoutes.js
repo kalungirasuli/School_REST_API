@@ -23,10 +23,10 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get a specific student by studentId
-router.get("/:studentId", async (req, res) => {
+// Get a specific student by Id
+router.get("/:id", async (req, res) => {
   try {
-    const student = await Student.findOne({ studentId: req.params.studentId });
+    const student = await Student.findOne({ Id: req.params.id });
     if (!student) {
       return res.status(404).send({ message: "Student not found" });
     }
@@ -36,11 +36,11 @@ router.get("/:studentId", async (req, res) => {
   }
 });
 
-// Update a specific student by studentId
-router.put("/:studentId", async (req, res) => {
+// Update a specific student by Id
+router.put("/:id", async (req, res) => {
   try {
     const updatedStudent = await Student.findOneAndUpdate(
-      { studentId: req.params.studentId },
+      { Id: req.params.id },
       req.body,
       { new: true } // Return the updated document
     );
@@ -53,11 +53,11 @@ router.put("/:studentId", async (req, res) => {
   }
 });
 
-// Delete a specific student by studentId
-router.delete("/:studentId", async (req, res) => {
+// Delete a specific student by Id
+router.delete("/:id", async (req, res) => {
   try {
     const deletedStudent = await Student.findOneAndDelete({
-      studentId: req.params.studentId,
+      Id: req.params.id,
     });
     if (!deletedStudent) {
       return res.status(404).send({ message: "Student not found" });
