@@ -39,13 +39,10 @@ router.get("/", async (req, res) => {
 // GET API FOR A SPECIFIC DEPARTMENT
 router.get("/:id", async (req, res) => {
   try {
-    const staffName = req.params.departmentName;
-    const department = await Department.findOne({ staffName });
-
+    const department = await Department.findOne({ _id: req.params.id });
     if (!department) {
       return res.status(404).json({ error: "Department not found." });
     }
-
     res.status(200).json(department);
   } catch (err) {
     res.status(500).json({ error: "Failed to fetch the department." });
@@ -56,7 +53,7 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const updatedDepartment = await Department.findOneAndUpdate(
-      { id: req.params.id },
+      { _id: req.params.id },
       req.body,
       { new: true }
     );
@@ -75,7 +72,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const deletedDepartment = await Department.findOneAndDelete({
-      _id: req.params,
+      _id: req.params.id,
     });
 
     if (!deletedDepartment) {
