@@ -26,7 +26,7 @@ router.get("/", async (req, res) => {
 // Get a specific student by Id
 router.get("/:id", async (req, res) => {
   try {
-    const student = await Student.findOne({ Id: req.params.id });
+    const student = await Student.findOne({ id: req.params.id });
     if (!student) {
       return res.status(404).send({ message: "Student not found" });
     }
@@ -40,7 +40,7 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => {
   try {
     const updatedStudent = await Student.findOneAndUpdate(
-      { Id: req.params.id },
+      { id: req.params.id },
       req.body,
       { new: true } // Return the updated document
     );
@@ -57,7 +57,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const deletedStudent = await Student.findOneAndDelete({
-      Id: req.params.id,
+      id: req.params.id,
     });
     if (!deletedStudent) {
       return res.status(404).send({ message: "Student not found" });
