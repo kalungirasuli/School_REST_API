@@ -25,8 +25,10 @@ db.on("error", (err) => {
 });
 
 //import main route
-const mainRoute = require("./routes/mainRoute");
-app.use("/v1", mainRoute);
+// const mainRoute = require("./routes/mainRoute");
+// app.use("/v1", mainRoute);
+const course = require("./routes/courses")
+app.use("/v1/courses",course)
 
 //this is the listener of the server
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
