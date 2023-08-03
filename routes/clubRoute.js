@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const clubModel = require("../models/club");
 
+//create club
 router.post("/", async (req, res) => {
   try {
     const club = new clubModel(req.body);
@@ -43,5 +44,13 @@ router.put("/:id", async (req, res) => {
 });
 
 //delete a specifc club
+router.delete("/:id", async(req, res)  => {
+  try{
+  await clubModel.findOneAndDelete({_id:req.params.id}) ;
+  res.status(200).send("successfully deleted club record");
+  }catch (error) {
+  res.status(500).send("failed to update club details");
+  }
+})
 
 module.exports = router;
