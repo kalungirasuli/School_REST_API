@@ -31,6 +31,15 @@
   # https://www.schoolapi.com/v1/endpoint
 
 # Staff:
+<<<<<<< HEAD
+=======
+  id 
+   firstName
+   secondName
+   gender
+   age
+   email
+>>>>>>> f906acd55a246354ecc53fdcf68d5e99e57eb26a
     # How to POST a Staff Member?
     [POST]  https://www.schoolapi.com/v1/staff/
 
@@ -54,6 +63,14 @@
 
 
 # students
+<<<<<<< HEAD
+=======
+   id 
+   firstName
+   secondName
+   gender
+   age
+>>>>>>> f906acd55a246354ecc53fdcf68d5e99e57eb26a
     # How to POST a Student?
     [POST]  https://www.schoolapi.com/v1/students/
 
@@ -76,6 +93,13 @@
     [DELETE]   https://www.schoolapi.com/v1/students/id # Client
 
 # courses
+<<<<<<< HEAD
+=======
+   name
+   courseCode
+   Department
+   duration
+>>>>>>> f906acd55a246354ecc53fdcf68d5e99e57eb26a
     # How to POST a Course?
     [POST]  https://www.schoolapi.com/v1/courses/
 
@@ -98,6 +122,13 @@
     [DELETE]   https://www.schoolapi.com/v1/courses/id # Client
 
 # departments
+<<<<<<< HEAD
+=======
+    name
+    staff
+    headOfDepartment
+    coursesInDepartment
+>>>>>>> f906acd55a246354ecc53fdcf68d5e99e57eb26a
     # How to POST a Department?
     [POST]  https://www.schoolapi.com/v1/departments/
 
@@ -120,6 +151,11 @@
     [DELETE]   https://www.schoolapi.com/v1/departments/id # Client
 
 # clubs
+<<<<<<< HEAD
+=======
+   name
+   headOfClub
+>>>>>>> f906acd55a246354ecc53fdcf68d5e99e57eb26a
     # How to POST a Club?
     [POST]  https://www.schoolapi.com/v1/clubs/
 
