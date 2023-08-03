@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const staffModel = require("../models/staffRoute");
 
-//create club
+//create staff
 router.post("/", async (req, res) => {
   try {
     const staff = new staffModel(req.body);
@@ -13,7 +13,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//get all clubs
+//get all staff
 router.get("/", async(req,res) =>{
     try{
     const staff = await staffModel.find();
@@ -23,7 +23,7 @@ router.get("/", async(req,res) =>{
     }
 })
 
-//get a specific club
+//get a specific staff
 router.get("/:id", async (req, res) => {
     try{
     const staff = await staffModel.findOne({_id:req.params.id});
@@ -33,7 +33,7 @@ router.get("/:id", async (req, res) => {
     }
 });
 
-//update a specifc club
+//update a specifc staff
 router.put("/:id", async (req, res) => {
     try{
     const staff = await staffModel.findOneAndUpdate({_id:req.params.id}, req.body, { new: true });
@@ -43,7 +43,7 @@ router.put("/:id", async (req, res) => {
     }
 });
 
-//delete a specifc club
+//delete a specifc staff
 router.delete("/:id", async(req, res)  => {
   try{
   await staffModel.findOneAndDelete({_id:req.params.id}) ;
