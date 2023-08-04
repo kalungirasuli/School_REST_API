@@ -21,6 +21,8 @@ db.on("error", (err) => {
   console.error(err);
 });
 
+const setupSwagger = require("./swagger");
+setupSwagger(app);
 const mainRoute = require("./routes/mainRoute"); //import main route
 app.use("/v1", mainRoute); //use route
 
