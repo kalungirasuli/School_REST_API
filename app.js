@@ -3,9 +3,12 @@ const app = express();
 const router=express.Router();
 const mongoose= require('mongoose')
 
+// const port = process.env.PORT || 3000;
+// const database = require("./database");
+// const mongoose = require("mongoose");
 const port = process.env.PORT || 3000;
 const database = require("./database");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 //middleware
 app.use(express.json()); //the body of the request is json
@@ -57,3 +60,4 @@ app.use("/v1", mainRoute);
 
 //this is the listener of the server
 // app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
