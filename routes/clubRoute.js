@@ -9,6 +9,28 @@ const clubModel = require("../models/club");
  *   description: API for managing clubs.
  */
 
+
+/**
+ * @swagger
+ * components:
+ *  schemas:
+ *    Club:
+ *      type: object
+ *      required:
+ *        - clubName
+ *        - headOfClub
+ *      properties:
+ *        clubName:
+ *          type: string
+ *        headOfClub:
+ *          type: string
+ *      example:
+ *        clubName: YAC
+ *        headOfClub: Benon M
+ * 
+ */
+
+
 /**
  * @swagger
  * /v1/clubs:
@@ -19,8 +41,8 @@ const clubModel = require("../models/club");
  *       required: true
  *       content:
  *         application/json:
- *           schema:
- *             $ref: '#/components/schemas/Club'
+ *           s:
+ *             $ref: '#/components/schema/Club'
  *     responses:
  *       200:
  *         description: Club created successfully
@@ -47,6 +69,10 @@ router.post("/", async (req, res) => {
  *     responses:
  *       200:
  *         description: List of clubs
+ *         content:
+ *            application/json:
+ *               schema:
+ *                  $ref: '#/components/schema/Club'
  *       500:
  *         description: Failed to retrieve clubs
  */
@@ -76,6 +102,10 @@ router.get("/", async (req, res) => {
  *     responses:
  *       200:
  *         description: Club found successfully
+ *         content:
+ *            application/json:
+ *              schema:
+ *                $ref: '#/components/schema/Club'
  *       500:
  *         description: Failed to find the required club
  */
