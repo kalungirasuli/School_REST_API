@@ -5,12 +5,12 @@ const Department = require('../models/department')
 
 
 // POST API
-router.post('/departments', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
       const { staff, departmentName, headOfDepartment, coursesInDepartment } = req.body;
       const existingDepartment = await Department.findOne({ departmentName });
       if (existingDepartment) {
-        return res.status(409).json({ error: 'Department with this staffName already exists.' });
+        return res.status(409).json({ error: 'there are no departments available' });
       }
       const newDepartment = new Department({
         staff,
@@ -29,7 +29,7 @@ router.post('/departments', async (req, res) => {
 
 
 // GET API FOR ALL DEPARTMENTS
-  router.get('/departments', async (req, res) => {
+  router.get('/', async (req, res) => {
     try {
       const departments = await Department.find({});
       res.status(200).json(departments);
@@ -42,10 +42,10 @@ router.post('/departments', async (req, res) => {
 
 
 // GET API FOR A SPECIFIC DEPARTMENT
-  router.get('/departments/:departmentName', async (req, res) => {
+  router.get('/:id', async (req, res) => {
     try {
-      const staffName = req.params.departmentName;
-      const department = await Department.findOne({ staffName });
+      const departmentName = req.params.departmentName;
+      const department = await Department.findOne({ departmentName });
   
       if (!department) {
         return res.status(404).json({ error: 'Department not found.' });
@@ -61,13 +61,13 @@ router.post('/departments', async (req, res) => {
 
 
 // PUT API FOR A SPECIFIC DEPARTMENT
-  router.put('/departments/:departmentName', async (req, res) => {
+  router.put('/:id', async (req, res) => {
     try {
-      const staffName = req.params.departmentName;
+      const departmentName = req.params.departmentName;
       const updates = req.body;
   
       const updatedDepartment = await Department.findOneAndUpdate(
-        { staffName },
+        { departmentName },
         updates,
         { new: true }
       );
@@ -87,7 +87,7 @@ router.post('/departments', async (req, res) => {
 
 
 // DELETE API FOR A SPECIFIC DEPARTMENT
-  router.delete('/departments/:departmentName', async (req, res) => {
+  router.delete('/:id', async (req, res) => {
     try {
       const departmentName = req.params.departmentName;
   
