@@ -11,8 +11,7 @@ const options = {
     },
     servers: [
       {
-        // url: "https://schoolapi-op58.onrender.com/",
-        url: "http://localhost:3000",
+        url: "https://schoolapi-op58.onrender.com/",
         // change this to http://localhost:3000 when running on local host
       },
     ],
