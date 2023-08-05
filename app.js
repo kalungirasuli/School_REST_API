@@ -3,10 +3,12 @@ const app = express();
 const mongoose = require("mongoose");
 const port = process.env.PORT || 3000;
 const database = require("./database");
+const cors = require("cors");
 
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 
 mongoose.connect(database.connect, {
   useNewUrlParser: true,
