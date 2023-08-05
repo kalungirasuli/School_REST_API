@@ -58,3 +58,87 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
+
+
+/**
+ * @swagger
+ * tags:
+ *    name: Staff
+ *    description: API for managing staff
+ */
+
+
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Staff:
+ *       type: object
+ *       required:
+ *         - Id
+ *         - firstName
+ *         - secondName
+ *         - gender
+ *         - age
+ *         - email
+ *       properties:
+ *         Id:
+ *           type: string
+ *         firstName:
+ *           type: string
+ *         secondName:
+ *           type: string
+ *         gender:
+ *           type: string
+ *         age:
+ *           type: number
+ *         email:
+ *           type: string
+ *       example:
+ *         Id: SCH-001
+ *         firstName: Mike 
+ *         secondName: Kajuna 
+ *         gender: male
+ *         age: 22
+ *         email: mikek@gmail.com
+ * 
+ */
+
+
+/**
+ * @swagger
+ * /v1/staff:
+ *    post:
+ *      summary: creates a staff member
+ *      tags: [Staff]
+ *      requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *              schema:
+ *                  $ref: '#/components/schemas/Staff'
+ *      responses:
+ *          200:
+ *            description: Succesfully created staff member 
+ *            content:
+ *                application/json:
+ *                    schema:
+ *                        $ref: '#/components/schemas/Staff'   
+ *          500:
+ *            description: Failed to create a staff member
+ * /v1/staff/:
+ *    get:
+ *      summary: Lists all staff
+ *      tags: [Staff]
+ *      responses:
+ *        200:
+ *          description: Get all staff
+ *          content:
+ *              application/json:
+ *                  schema:  
+*                      $ref: '#/components/schemas/Staff'
+ *                  
+ *         
+ *          
+ */
