@@ -111,7 +111,7 @@ module.exports = router;
  * /v1/students:
  *   get:
  *     summary: Lists all the students
- *     tags: [students]
+ *     tags: [Students]
  *     responses:
  *       200:
  *         description: The list of the students
@@ -123,7 +123,7 @@ module.exports = router;
  *                 $ref: '#/components/schemas/Student'
  *   post:
  *     summary: Create a new student
- *     tags: [students]
+ *     tags: [Students]
  *     requestBody:
  *       required: true
  *       content:
@@ -142,7 +142,7 @@ module.exports = router;
  * /v1/students/{id}:
  *   get:
  *     summary: Get the student by id
- *     tags: [students]
+ *     tags: [Students]
  *     parameters:
  *       - in: path
  *         name: id
@@ -161,7 +161,7 @@ module.exports = router;
  *         description: The student was not found
  *   put:
  *    summary: Update the student by the id
- *    tags: [students]
+ *    tags: [Students]
  *    parameters:
  *      - in: path
  *        name: id
@@ -188,7 +188,7 @@ module.exports = router;
  *        description: Some error happened
  *   delete:
  *     summary: Remove the student by id
- *     tags: [students]
+ *     tags: [Students]
  *     parameters:
  *       - in: path
  *         name: id
