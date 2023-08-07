@@ -11,6 +11,34 @@ const Course = require("../models/course");
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     Course:
+ *       type: object
+ *       required:
+ *         - name
+ *         - courseCode
+ *         - department
+ *         - duration
+ *       properties:
+ *         name:
+ *           type: string
+ *         courseCode:
+ *           type: string
+ *         department:
+ *           type: string
+ *         duration:
+ *           type: string
+ *       example:
+ *         name: Buisness Statistics 
+ *         courseCode: BBS
+ *         department: CSE
+ *         duration: 3 years
+ */
+
+
+/**
+ * @swagger
  * /v1/courses:
  *   post:
  *     summary: Create a new course
