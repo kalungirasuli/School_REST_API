@@ -5,9 +5,9 @@ const options = {
   swaggerDefinition: {
     openapi: "3.0.0",
     info: {
-      title: "API Documentation for school system",
+      title: "Your API Documentation",
       version: "1.0.0",
-      description: "API documentation for school rest API",
+      description: "API documentation for your Express.js app",
     },
     servers: [
       {
