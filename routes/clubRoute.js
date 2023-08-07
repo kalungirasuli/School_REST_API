@@ -42,7 +42,7 @@ const clubModel = require("../models/club");
  *       content:
  *         application/json:
  *           s:
- *             $ref: '#/components/schema/Club'
+ *             $ref: '#/components/schemas/Club'
  *     responses:
  *       200:
  *         description: Club created successfully
@@ -72,7 +72,7 @@ router.post("/", async (req, res) => {
  *         content:
  *            application/json:
  *               schema:
- *                  $ref: '#/components/schema/Club'
+ *                  $ref: '#/components/schemas/Club'
  *       500:
  *         description: Failed to retrieve clubs
  */
@@ -105,7 +105,7 @@ router.get("/", async (req, res) => {
  *         content:
  *            application/json:
  *              schema:
- *                $ref: '#/components/schema/Club'
+ *                $ref: '#/components/schemas/Club'
  *       500:
  *         description: Failed to find the required club
  */
