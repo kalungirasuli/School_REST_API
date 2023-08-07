@@ -182,5 +182,26 @@ module.exports = router;
  *            description: Succesfully updated staff member
  *          500:
  *             description: Failed to update staff member
- * 
+ *
  */ 
+
+/**
+ * @swagger
+ * /v1/staff/{id}:
+ *    delete: 
+ *      summary: Delete a staff member
+ *      tags: [Staff]
+ *      parameters:
+ *          - in: path
+ *            name: id  
+ *            schema:
+ *                type: string
+ *            required: true
+ *            description: ID of the staff member
+ *      responses:
+ *          200:
+ *            description: Succesfully deleted staff member
+ *          500:
+ *             description: Failed to delete staff member
+ * 
+ */
