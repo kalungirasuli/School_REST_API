@@ -8,9 +8,7 @@ const cors = require("cors");
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-  origin: 'http://localhost:5173'
-}));
+app.use(cors());
 
 
 mongoose.connect(database.connect, {
