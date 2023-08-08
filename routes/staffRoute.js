@@ -137,8 +137,69 @@ module.exports = router;
  *          content:
  *              application/json:
  *                  schema:  
-*                      $ref: '#/components/schemas/Staff'
+ *                      $ref: '#/components/schemas/Staff'
  *                  
- *         
- *          
+ * /v1/staff/{id}:
+ *    get:
+ *      summary: Get a specific staff member
+ *      tags: [Staff]
+ *      parameters:
+ *        - in: path
+ *          name: id
+ *          schema:
+ *            type: string  
+ *      responses:
+ *        200:
+ *          description: Get a specific staff
+ *          content:
+ *              application/json:
+ *                  schema:
+ *                      $ref: '#/components/schemas/Staff'
+ *        500:
+ *          description: Failed to get staff member
+ * 
+ * v1/staff/{id}:
+ *   put:
+ *     summary: Update a specific staff member
+ *     tags: [Staff]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID of the staff
+ *     requestBody:
+ *         required: true
+ *         content:
+ *           application/json:
+ *               schema:
+ *                   $ref: '#/components/schemas/Staff'
+ *     responses:
+ *       200:
+ *         description: Staff updated successfully
+ *       500:
+ *         description: Failed to update staff details
+ * 
+ */
+
+/**
+ * @swagger
+ * v1/staff/{id}:
+ *   delete:
+ *     summary: Delete a specific staff member
+ *     tags: [Staff]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: ID of the staff
+ *     responses:
+ *       200:
+ *         description: Staff deleted successfully
+ *       500:
+ *         description: Failed to delete staff
+ * 
  */
