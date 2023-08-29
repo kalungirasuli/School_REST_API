@@ -69,3 +69,137 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
+
+/**
+ * @swagger
+ * components:
+ *   schemas:
+ *     Student:
+ *       type: object
+ *       required:
+ *         - id
+ *         - firstName
+ *         - secondName
+ *         - gender
+ *       properties:
+ *         id:
+ *           type: string
+ *           description: The id of the student
+ *         firstName:
+ *           type: string
+ *           description: The first name of the student
+ *         secondName:
+ *           type: string
+ *           description: The second name of the student
+ *         gender:
+ *           type: string
+ *           description: The gender of the student
+ *       example:
+ *         id: STD-123
+ *         firstName: Dewney
+ *         secondName: Alexander
+ *         gender: male
+ *        
+ */
+
+
+/**
+ * @swagger
+ * tags:
+ *   name: Students
+ *   description: The student API
+ * /v1/students:
+ *   get:
+ *     summary: Lists all the students
+ *     tags: [Students]
+ *     responses:
+ *       200:
+ *         description: The list of the students
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 $ref: '#/components/schemas/Student'
+ *   post:
+ *     summary: Create a new student
+ *     tags: [Students]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Student'
+ *     responses:
+ *       200:
+ *         description: The created student.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Student'
+ *       500:
+ *         description: Some server error
+ * /v1/students/{id}:
+ *   get:
+ *     summary: Get the student by id
+ *     tags: [Students]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The student id
+ *     responses:
+ *       200:
+ *         description: The student response by id
+ *         contenT:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Student'
+ *       404:
+ *         description: The student was not found
+ *   put:
+ *    summary: Update the student by the id
+ *    tags: [Students]
+ *    parameters:
+ *      - in: path
+ *        name: id
+ *        schema:
+ *          type: string
+ *        required: true
+ *        description: The student id
+ *    requestBody:
+ *      required: true
+ *      content:
+ *        application/json:
+ *          schema:
+ *            $ref: '#/components/schemas/Student'
+ *    responses:
+ *      200:
+ *        description: The student was updated
+ *        content:
+ *          application/json:
+ *            schema:
+ *              $ref: '#/components/schemas/Student'
+ *      404:
+ *        description: The students was not found
+ *      500:
+ *        description: Some error happened
+ *   delete:
+ *     summary: Remove the student by id
+ *     tags: [Students]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         schema:
+ *           type: string
+ *         required: true
+ *         description: The student id
+ *
+ *     responses:
+ *       200:
+ *         description: The student was deleted
+ *       404:
+ *         description: The student was not found
+ */

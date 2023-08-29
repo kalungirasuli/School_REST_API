@@ -1,33 +1,30 @@
 const express = require("express");
 const app = express();
+const mongoose = require("mongoose");
 const port = process.env.PORT || 3000;
 const database = require("./database");
-const mongoose = require("mongoose");
+const cors = require("cors");
 
 //middleware
-app.use(express.json()); //the body of the request is json
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-//connecting to the db
+app.use(cors());
 mongoose.connect(database.connect, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+}); //connecting to the db
 
 const db = mongoose.connection;
-//checking if db has connected
 db.once("open", () => {
   console.log("connected to db");
-});
+}); //checking if db has connected
 db.on("error", (err) => {
   console.error(err);
 });
 
-//import main route
-const mainRoute = require("./routes/mainRoute");
+const setupSwagger = require("./swagger");
+setupSwagger(app);
+const mainRoute = require("./routes/mainRoute"); //import main route
+app.use("/v1", mainRoute); //use route
 
-//use route
-app.use("/v1", mainRoute);
-
-//this is the listener of the server
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
